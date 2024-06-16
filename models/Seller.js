@@ -16,6 +16,9 @@ const sellerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    imglink:{
+        type: String,
+    },
     vendor: {
         type: vendorSchema,
         required: true

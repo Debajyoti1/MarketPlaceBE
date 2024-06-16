@@ -20,6 +20,9 @@ const productSchema = new mongoose.Schema({
     purity: {
         type: String,
         required: true
+    },
+    imglink: {
+        type: String,
     }
 });
 
