@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
+// const Product = require('./Product'); // Adjust the path as necessary
 const vendorSchema = require('./Vendor');
-const productSchema = require('./Product');
 
 const sellerSchema = new mongoose.Schema({
     email: {
@@ -16,14 +16,17 @@ const sellerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    imglink:{
+    imglink: {
         type: String,
     },
     vendor: {
         type: vendorSchema,
         required: true
     },
-    products: [productSchema]
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product' // Reference to the Product model
+    }]
 }, {
     timestamps: true
 });
