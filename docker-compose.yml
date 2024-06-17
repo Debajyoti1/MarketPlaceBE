@@ -1,0 +1,10 @@
+services:
+  mpbe:
+    build: .
+    ports:
+      - "8201:8000"
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+    restart: always
